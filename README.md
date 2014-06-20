@@ -1,4 +1,4 @@
-zenini
+Zenini (pronounced as zen ini)
 ======
 
-Zen INI
+The goal is to create a simple, ini utility library (native c#)
