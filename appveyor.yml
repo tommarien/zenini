@@ -9,8 +9,7 @@
 #---------------------------------#
 
 # version format
-semantic_version: 0.0.1
-version: {semantic_version}.{build}
+version: 0.0.{build}
 
 # branches to build
 # branches:
@@ -95,8 +94,8 @@ version: {semantic_version}.{build}
 assembly_info:
   patch: true
   file: AssemblyInfo.*
-  assembly_version: "{semantic_version}"
-  assembly_file_version: "{semantic_version}"
+  assembly_version: "{version}"
+  assembly_file_version: "{version}"
   assembly_informational_version: "{version}"
 
 #---------------------------------#
