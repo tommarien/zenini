@@ -1,11 +1,12 @@
 ﻿using System.Collections.Generic;
 using NUnit.Framework;
 using Shouldly;
+using Zenini.Core.Patterns;
 
-namespace Zenini.Core.Patterns.Section
+namespace Zenini.Tests.Patterns.Section
 {
     [TestFixture]
-    public class When_matching_a_string_for_a_section
+    public class Matching_a_string_for_a_section
     {
         [SetUp]
         public void Setup()
@@ -29,7 +30,7 @@ namespace Zenini.Core.Patterns.Section
 
         [Test]
         [TestCaseSource("TestValues")]
-        public void it_matches_string(string line)
+        public void returns_true_for(string line)
         {
             Pattern.Matches(line).ShouldBe(true);
         }
