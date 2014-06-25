@@ -48,6 +48,7 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Patterns\Section\When_extracting_a_section.cs" />
     <Compile Include="Patterns\Section\When_matching_a_string_for_a_section.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>

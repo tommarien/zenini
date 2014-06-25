@@ -23,6 +23,7 @@ namespace Zenini.Core.Patterns.Section
                 yield return "[A Section]";
                 yield return "[ A Section]";
                 yield return "[A Section ]";
+                yield return "[A [special] section]";
             }
         }
 
