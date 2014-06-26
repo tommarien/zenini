@@ -1,9 +1,9 @@
 ﻿<?xml version="1.0" encoding="utf-8"?>
 <package xmlns="http://schemas.microsoft.com/packaging/2010/07/nuspec.xsd">
     <metadata>
-        <id>zenini.core</id>
+        <id>Zenini.Core</id>
         <version>$version$</version>
-        <title>ZenIni</title>
+        <title>Zen INI</title>
         <authors>Tom Marien</authors>
         <projectUrl>https://github.com/tommarien/zenini</projectUrl>
         <requireLicenseAcceptance>false</requireLicenseAcceptance>
@@ -12,7 +12,5 @@
 	<files>
 	  <file src="bin\$configuration$\$id$.dll" target="lib\net40\" />	
 	  <file src="bin\$configuration$\$id$.pdb" target="lib\net40\" />
-	  <file src="bin\$configuration$\$id$.xml" target="lib\net40\" />
 	</files>
-
 </package>
