@@ -6,7 +6,7 @@ using Zenini.Core.Patterns;
 namespace Zenini.Tests.Patterns.Section
 {
     [TestFixture]
-    public class Matching_a_string_for_a_section
+    public class Matching_a_line_for_a_section
     {
         [SetUp]
         public void Setup()
@@ -33,6 +33,12 @@ namespace Zenini.Tests.Patterns.Section
         public void returns_true_for(string line)
         {
             Pattern.Matches(line).ShouldBe(true);
+        }
+
+        [Test]
+        public void returns_true_even_if_line_has_trailing_whitespaces()
+        {
+            Pattern.Matches("[A Section]  ").ShouldBe(true);
         }
     }
 }

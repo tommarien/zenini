@@ -49,8 +49,8 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="Model\Sections\A_section.cs" />
-    <Compile Include="Patterns\Section\Extracting_a_section_from_a_string.cs" />
-    <Compile Include="Patterns\Section\Matching_a_string_for_a_section.cs" />
+    <Compile Include="Patterns\Section\Extracting_a_section_from_a_line.cs" />
+    <Compile Include="Patterns\Section\Matching_a_line_for_a_section.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup>

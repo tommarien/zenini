@@ -5,7 +5,7 @@ using Zenini.Core.Patterns;
 namespace Zenini.Tests.Patterns.Section
 {
     [TestFixture]
-    public class Extracting_a_section_from_a_string
+    public class Extracting_a_section_from_a_line
     {
         [SetUp]
         public void Setup()
@@ -22,7 +22,7 @@ namespace Zenini.Tests.Patterns.Section
         }
 
         [Test]
-        public void returns_null_if_it_does_not_match()
+        public void returns_null_if_no_section()
         {
             Pattern.Extract("This is no section]").ShouldBe(null);
         }

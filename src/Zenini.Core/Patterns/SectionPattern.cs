@@ -4,7 +4,7 @@ namespace Zenini.Core.Patterns
 {
     public class SectionPattern
     {
-        private static readonly Regex SectionRegex = new Regex(@"\A\[(.*)\]\z", RegexOptions.Compiled);
+        private static readonly Regex SectionRegex = new Regex(@"\A\[(.*)\]\s*\z", RegexOptions.Compiled);
 
         public bool Matches(string value)
         {
