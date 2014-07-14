@@ -41,7 +41,7 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="IniReader.cs" />
+    <Compile Include="IniSettingsFactory.cs" />
     <Compile Include="Model\IIniSettings.cs" />
     <Compile Include="Model\IniSettings.cs" />
     <Compile Include="Model\ISection.cs" />
