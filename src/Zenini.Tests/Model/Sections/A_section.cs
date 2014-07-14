@@ -20,11 +20,5 @@ namespace Zenini.Tests.Model.Sections
         {
             Section.Name.ShouldBe("A given section");
         }
-
-        [Test]
-        public void returns_its_name_when_to_string()
-        {
-            Section.ToString().ShouldBe(Section.Name);
-        }
     }
 }
