@@ -1,14 +1,23 @@
-﻿using System.Collections.Generic;
-using System.IO;
+﻿using System.IO;
 using System.Text;
-using Zenini.Core.Patterns;
 using Zenini.Model;
+using Zenini.Readers;
 
 namespace Zenini
 {
     public class IniSettingsFactory
     {
-        private readonly SectionPattern _sectionPattern = new SectionPattern();
+        private readonly ISettingsReader _settingsReader;
+
+        public IniSettingsFactory()
+            : this(new CaseSensitiveSettingsReader())
+        {
+        }
+
+        public IniSettingsFactory(ISettingsReader settingsReader)
+        {
+            _settingsReader = settingsReader;
+        }
 
         public IIniSettings FromFile(string fileName)
         {
@@ -27,26 +36,14 @@ namespace Zenini
         {
             StreamReader reader = encoding == null ? new StreamReader(stream, true) : new StreamReader(stream, encoding);
 
-            var sections = new HashSet<ISection>();
-
             try
             {
-                while (!reader.EndOfStream)
-                {
-                    string line = reader.ReadLine();
-
-                    if (_sectionPattern.Matches(line))
-                    {
-                        sections.Add(new Section(_sectionPattern.Extract(line)));
-                    }
-                }
+                return _settingsReader.Read(reader);
             }
             finally
             {
                 reader.Dispose();
             }
-
-            return new IniSettings(sections);
         }
     }
 }

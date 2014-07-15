@@ -6,12 +6,7 @@ namespace Zenini.Model
 {
     public class IniSettings : IIniSettings
     {
-        private readonly HashSet<ISection> _sections;
-
-        public IniSettings(IEnumerable<ISection> sections)
-        {
-            _sections = new HashSet<ISection>(sections);
-        }
+        private readonly HashSet<ISection> _sections = new HashSet<ISection>();
 
         public ISection this[string name]
         {
@@ -26,6 +21,11 @@ namespace Zenini.Model
         IEnumerator IEnumerable.GetEnumerator()
         {
             return GetEnumerator();
+        }
+
+        public bool AddSection(ISection section)
+        {
+            return _sections.Add(section);
         }
     }
 }

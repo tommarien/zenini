@@ -41,6 +41,7 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="ISettingsReader.cs" />
     <Compile Include="IniSettingsFactory.cs" />
     <Compile Include="Model\IIniSettings.cs" />
     <Compile Include="Model\IniSettings.cs" />
@@ -48,6 +49,7 @@
     <Compile Include="Model\Section.cs" />
     <Compile Include="Patterns\SectionPattern.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="Readers\CaseSensitiveSettingsReader.cs" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
