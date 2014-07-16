@@ -5,16 +5,16 @@ using Zenini.Readers;
 
 namespace Zenini
 {
-    public class IniSettingsFactory
+    public class IniSettingsProvider
     {
         private readonly ISettingsReader _settingsReader;
 
-        public IniSettingsFactory()
+        public IniSettingsProvider()
             : this(new CaseSensitiveSettingsReader())
         {
         }
 
-        public IniSettingsFactory(ISettingsReader settingsReader)
+        public IniSettingsProvider(ISettingsReader settingsReader)
         {
             _settingsReader = settingsReader;
         }
@@ -29,20 +29,17 @@ namespace Zenini
 
         public IIniSettings FromStream(Stream stream)
         {
-            return FromStream(stream, null);
+            using (var sr = new StreamReader(stream, true))
+            {
+                return _settingsReader.Read(sr);
+            }
         }
 
         public IIniSettings FromStream(Stream stream, Encoding encoding)
         {
-            StreamReader reader = encoding == null ? new StreamReader(stream, true) : new StreamReader(stream, encoding);
-
-            try
+            using (var sr = new StreamReader(stream, encoding))
             {
-                return _settingsReader.Read(reader);
-            }
-            finally
-            {
-                reader.Dispose();
+                return _settingsReader.Read(sr);
             }
         }
     }

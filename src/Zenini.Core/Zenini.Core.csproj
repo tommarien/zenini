@@ -42,7 +42,7 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="ISettingsReader.cs" />
-    <Compile Include="IniSettingsFactory.cs" />
+    <Compile Include="IniSettingsProvider.cs" />
     <Compile Include="Model\IIniSettings.cs" />
     <Compile Include="Model\IniSettings.cs" />
     <Compile Include="Model\ISection.cs" />
