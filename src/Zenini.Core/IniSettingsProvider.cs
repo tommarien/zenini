@@ -27,6 +27,14 @@ namespace Zenini
             }
         }
 
+        public IIniSettings FromFile(string fileName, Encoding encoding)
+        {
+            using (FileStream fs = File.OpenRead(fileName))
+            {
+                return FromStream(fs, encoding);
+            }
+        }
+
         public IIniSettings FromStream(Stream stream)
         {
             using (var sr = new StreamReader(stream, true))
