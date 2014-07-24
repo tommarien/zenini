@@ -10,7 +10,7 @@ namespace Zenini
         private readonly ISettingsReader _settingsReader;
 
         public IniSettingsProvider()
-            : this(new CaseSensitiveSettingsReader())
+            : this(new DefaultSettingsReader())
         {
         }
 
@@ -45,7 +45,7 @@ namespace Zenini
 
         public IIniSettings FromStream(Stream stream, Encoding encoding)
         {
-            using (var sr = new StreamReader(stream, encoding))
+            using (var sr = new StreamReader(stream, encoding, false))
             {
                 return _settingsReader.Read(sr);
             }

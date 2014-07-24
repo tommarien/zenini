@@ -14,6 +14,7 @@ namespace Zenini.Tests.Provider
             StreamReader sr = (StreamReader) reader;
             if (sr != null)
             {
+                sr.Read();
                 UsedEncoding = sr.CurrentEncoding;
             }
 

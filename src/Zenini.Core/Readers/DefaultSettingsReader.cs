@@ -4,7 +4,7 @@ using Zenini.Model;
 
 namespace Zenini.Readers
 {
-    public class CaseSensitiveSettingsReader : ISettingsReader
+    public class DefaultSettingsReader : ISettingsReader
     {
         private readonly SectionPattern _sectionPattern = new SectionPattern();
 
