@@ -1,5 +1,4 @@
-﻿using System.Collections;
-using System.Collections.Generic;
+﻿using System.Collections.Generic;
 using System.Linq;
 
 namespace Zenini.Model
@@ -8,19 +7,9 @@ namespace Zenini.Model
     {
         private readonly HashSet<ISection> _sections = new HashSet<ISection>();
 
-        public ISection this[string name]
+        public ISection[] Sections
         {
-            get { return _sections.FirstOrDefault(x => x.Name == name) ?? new Section(name); }
-        }
-
-        public IEnumerator<ISection> GetEnumerator()
-        {
-            return _sections.GetEnumerator();
-        }
-
-        IEnumerator IEnumerable.GetEnumerator()
-        {
-            return GetEnumerator();
+            get { return _sections.ToArray(); }
         }
 
         public bool AddSection(ISection section)

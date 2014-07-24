@@ -58,6 +58,9 @@
     <Compile Include="Provider\FakeSettingsReader.cs" />
     <Compile Include="Provider\Providing_settings_from_file.cs" />
     <Compile Include="Provider\Providing_settings_from_file_specifying_encoding.cs" />
+    <Compile Include="Reading\ReaderFixture.cs" />
+    <Compile Include="Reading\Sections\When_reading_sections.cs" />
+    <Compile Include="Reading\Sections\When_reading_sections_that_appear_multiple_times.cs" />
     <Compile Include="TestFiles\TestFile.cs" />
   </ItemGroup>
   <ItemGroup>
@@ -75,6 +78,7 @@
       <Name>Zenini.Core</Name>
     </ProjectReference>
   </ItemGroup>
+  <ItemGroup />
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <Import Project="$(SolutionDir)\.nuget\NuGet.targets" Condition="Exists('$(SolutionDir)\.nuget\NuGet.targets')" />
   <Target Name="EnsureNuGetPackageBuildImports" BeforeTargets="PrepareForBuild">
