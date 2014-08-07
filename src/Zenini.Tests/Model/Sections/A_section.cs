@@ -16,6 +16,12 @@ namespace Zenini.Tests.Model.Sections
         public Section Section { get; set; }
 
         [Test]
+        public void has_a_readable_toString_representation()
+        {
+            Section.ToString().ShouldBe("Section: A given section");
+        }
+
+        [Test]
         public void retains_its_name()
         {
             Section.Name.ShouldBe("A given section");

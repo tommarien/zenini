@@ -1,4 +1,5 @@
-﻿using System.IO;
+﻿using System.Collections.Generic;
+using System.IO;
 using Zenini.Core.Patterns;
 using Zenini.Model;
 
@@ -10,7 +11,7 @@ namespace Zenini.Readers
 
         public IIniSettings Read(TextReader reader)
         {
-            var settings = new IniSettings();
+            var sections = new Dictionary<string, Section>();
 
             string line;
             while ((line = reader.ReadLine()) != null)
@@ -19,12 +20,12 @@ namespace Zenini.Readers
                 {
                     var section = new Section(_sectionPattern.Extract(line));
 
-                    settings.AddSection(section);
+                    if (!sections.ContainsKey(section.Name))
+                        sections.Add(section.Name, section);
                 }
             }
 
-
-            return settings;
+            return new IniSettings(sections.Values);
         }
     }
 }

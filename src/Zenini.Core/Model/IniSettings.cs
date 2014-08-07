@@ -1,20 +1,19 @@
 ﻿using System.Collections.Generic;
-using System.Linq;
 
 namespace Zenini.Model
 {
     public class IniSettings : IIniSettings
     {
-        private readonly HashSet<ISection> _sections = new HashSet<ISection>();
+        private readonly List<ISection> _sections;
+
+        public IniSettings(IEnumerable<ISection> sections)
+        {
+            _sections = new List<ISection>(sections);
+        }
 
         public ISection[] Sections
         {
             get { return _sections.ToArray(); }
-        }
-
-        public bool AddSection(ISection section)
-        {
-            return _sections.Add(section);
         }
     }
 }
