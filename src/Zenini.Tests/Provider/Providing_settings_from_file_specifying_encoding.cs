@@ -13,15 +13,15 @@ namespace Zenini.Tests.Provider
         [SetUp]
         public void Setup()
         {
-            reader = new FakeSettingsReader
+            Reader = new FakeSettingsReader
                 {
                     SettingsToReturn = Substitute.For<IIniSettings>()
                 };
 
-            Provider = new IniSettingsProvider(reader);
+            Provider = new IniSettingsProvider(Reader);
         }
 
-        public FakeSettingsReader reader { get; set; }
+        public FakeSettingsReader Reader { get; set; }
         public IniSettingsProvider Provider { get; set; }
 
         [Test]
@@ -29,13 +29,13 @@ namespace Zenini.Tests.Provider
         {
             Provider.FromFile(TestFile.Named("Empty_utf8.ini"), Encoding.UTF7);
 
-            reader.UsedEncoding.ShouldBe(Encoding.UTF7);
+            Reader.UsedEncoding.ShouldBe(Encoding.UTF7);
         }
 
         [Test]
         public void returns_expected_settings()
         {
-            Provider.FromFile(TestFile.Named("Empty_utf8.ini"), Encoding.UTF8).ShouldBeSameAs(reader.SettingsToReturn);
+            Provider.FromFile(TestFile.Named("Empty_utf8.ini"), Encoding.UTF8).ShouldBeSameAs(Reader.SettingsToReturn);
         }
     }
 }
