@@ -5,7 +5,7 @@ using Zenini.Model;
 namespace Zenini.Tests.Reading.Sections
 {
     [TestFixture]
-    public class When_reading_sections : ReaderFixture
+    public class When_reading_sections : SettingsReaderFixture
     {
         [Test]
         public void it_extracts_the_section_name()

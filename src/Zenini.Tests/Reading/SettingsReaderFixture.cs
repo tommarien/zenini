@@ -6,7 +6,7 @@ using Zenini.Readers;
 
 namespace Zenini.Tests.Reading
 {
-    public abstract class ReaderFixture
+    public abstract class SettingsReaderFixture
     {
         protected ISettingsReader Reader { get; private set; }
         protected StringBuilder Source { get; private set; }

@@ -6,7 +6,7 @@ using Zenini.Model;
 namespace Zenini.Tests.Reading.Sections
 {
     [TestFixture]
-    public class When_reading_sections_that_appear_multiple_times : ReaderFixture
+    public class When_reading_sections_that_appear_multiple_times : SettingsReaderFixture
     {
         protected override void AfterSetup()
         {
