@@ -14,7 +14,7 @@ namespace Zenini.Tests.Reading.Sections
 
             IIniSettings settings = ReadFromSource();
 
-            settings.Sections.ShouldContain(section => section.Name == "SectionOne");
+            settings.ShouldContain(section => section.Name == "SectionOne");
         }
 
         [Test]
@@ -24,7 +24,7 @@ namespace Zenini.Tests.Reading.Sections
 
             IIniSettings settings = ReadFromSource();
 
-            settings.Sections.ShouldContain(section => section.Name == "Section One");
+            settings.ShouldContain(section => section.Name == "Section One");
         }
 
         [Test]
@@ -34,7 +34,7 @@ namespace Zenini.Tests.Reading.Sections
 
             IIniSettings settings = ReadFromSource();
 
-            settings.Sections.ShouldContain(section => section.Name == string.Empty);
+            settings.ShouldContain(section => section.Name == string.Empty);
         }
 
         [Test]
@@ -44,7 +44,7 @@ namespace Zenini.Tests.Reading.Sections
 
             IIniSettings settings = ReadFromSource();
 
-            settings.Sections.ShouldContain(section => section.Name == "[Special]Section");
+            settings.ShouldContain(section => section.Name == "[Special]Section");
         }
 
         [Test]
@@ -54,7 +54,7 @@ namespace Zenini.Tests.Reading.Sections
 
             IIniSettings settings = ReadFromSource();
 
-            settings.Sections.ShouldNotContain(section => section.Name == "SectionThree");
+            settings.ShouldNotContain(section => section.Name == "SectionThree");
         }
 
         [Test]
@@ -64,7 +64,7 @@ namespace Zenini.Tests.Reading.Sections
 
             IIniSettings settings = ReadFromSource();
 
-            settings.Sections.ShouldContain(section => section.Name == "SectionThree");
+            settings.ShouldContain(section => section.Name == "SectionThree");
         }
 
         [Test]
@@ -74,7 +74,7 @@ namespace Zenini.Tests.Reading.Sections
 
             IIniSettings settings = ReadFromSource();
 
-            settings.Sections.ShouldContain(section => section.Name == "SectionTwo");
+            settings.ShouldContain(section => section.Name == "SectionTwo");
         }
 
         [Test]
@@ -84,7 +84,7 @@ namespace Zenini.Tests.Reading.Sections
 
             IIniSettings settings = ReadFromSource();
 
-            settings.Sections.ShouldContain(section => section.Name == "SectionThree");
+            settings.ShouldContain(section => section.Name == "SectionThree");
         }
     }
 }

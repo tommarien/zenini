@@ -1,7 +1,9 @@
-﻿namespace Zenini.Model
+﻿using System.Collections.Generic;
+
+namespace Zenini.Model
 {
-    public interface IIniSettings
+    public interface IIniSettings : IEnumerable<ISection>
     {
-        ISection[] Sections { get; }
+        ISection this[string name] { get; }
     }
 }

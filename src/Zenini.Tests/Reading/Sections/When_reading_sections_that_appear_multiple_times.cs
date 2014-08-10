@@ -20,7 +20,7 @@ namespace Zenini.Tests.Reading.Sections
         {
             IIniSettings settings = ReadFromSource();
 
-            settings.Sections.Count(s => s.Name == "SectionOne").ShouldBe(1);
+            settings.Count(s => s.Name == "SectionOne").ShouldBe(1);
         }
     }
 }

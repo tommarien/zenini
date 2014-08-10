@@ -1,4 +1,7 @@
-﻿using System.Collections.Generic;
+﻿using System;
+using System.Collections;
+using System.Collections.Generic;
+using System.Linq;
 
 namespace Zenini.Model
 {
@@ -14,6 +17,21 @@ namespace Zenini.Model
         public ISection[] Sections
         {
             get { return _sections.ToArray(); }
+        }
+
+        public IEnumerator<ISection> GetEnumerator()
+        {
+            return _sections.GetEnumerator();
+        }
+
+        IEnumerator IEnumerable.GetEnumerator()
+        {
+            return GetEnumerator();
+        }
+
+        public ISection this[string name]
+        {
+            get { return _sections.FirstOrDefault(s => string.Equals(s.Name, name, StringComparison.OrdinalIgnoreCase)); }
         }
     }
 }
