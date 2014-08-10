@@ -31,7 +31,7 @@ namespace Zenini.Model
 
         public ISection this[string name]
         {
-            get { return _sections.FirstOrDefault(s => string.Equals(s.Name, name, StringComparison.OrdinalIgnoreCase)); }
+            get { return _sections.FirstOrDefault(s => string.Equals(s.Name, name, StringComparison.OrdinalIgnoreCase)) ?? Section.Empty; }
         }
     }
 }

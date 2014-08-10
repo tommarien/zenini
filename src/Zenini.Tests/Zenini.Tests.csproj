@@ -51,7 +51,7 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="Model\An_IniSettings_model.cs" />
+    <Compile Include="Model\An_IniSettings_instance.cs" />
     <Compile Include="Model\Sections\A_section.cs" />
     <Compile Include="Patterns\Section\Extracting_a_section_from_a_line.cs" />
     <Compile Include="Patterns\Section\Matching_a_line_for_a_section.cs" />
