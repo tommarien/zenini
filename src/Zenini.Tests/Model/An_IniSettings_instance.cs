@@ -23,12 +23,6 @@ namespace Zenini.Tests.Model
         private IIniSettings settings;
 
         [Test]
-        public void has_an_indexer_that_ignores_string_casing()
-        {
-            settings["Sectionone"].ShouldBeSameAs(sectionOne);
-        }
-
-        [Test]
         public void has_an_indexer_that_returns_an_empty_section_if_none_match()
         {
             settings["sectionthree"].ShouldBeSameAs(Section.Empty);
