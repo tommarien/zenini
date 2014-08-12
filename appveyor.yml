@@ -9,7 +9,7 @@
 #---------------------------------#
 
 # version format
-version: '{build}'
+version: 0.0.0.{build}
 
 # branches to build
 # branches:
@@ -94,9 +94,9 @@ version: '{build}'
 assembly_info:
   patch: true
   file: AssemblyInfo.*
-  assembly_version: "1.0.0.{version}"
-  assembly_file_version: "1.0.0.{version}"
-  assembly_informational_version: "1.0.0.PRE"
+  assembly_version: "{version}"
+  assembly_file_version: "{version}"
+  assembly_informational_version: "0.0.0"
 
 #---------------------------------#
 #       build configuration       #
