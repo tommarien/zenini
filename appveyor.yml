@@ -9,8 +9,7 @@
 #---------------------------------#
 
 # version format
-semver: 0.0.0
-version: 0.0.0.{build}
+version: {build}
 
 # branches to build
 # branches:
@@ -95,9 +94,9 @@ version: 0.0.0.{build}
 assembly_info:
   patch: true
   file: AssemblyInfo.*
-  assembly_version: "{version}"
-  assembly_file_version: "{version}"
-  assembly_informational_version: "{semver}.PRE"
+  assembly_version: "1.0.0.{version}"
+  assembly_file_version: "1.0.0.{version}"
+  assembly_informational_version: "1.0.0.PRE"
 
 #---------------------------------#
 #       build configuration       #
