@@ -1,4 +1,5 @@
-﻿using System.Linq;
+﻿using System.Collections.Generic;
+using System.Linq;
 using NUnit.Framework;
 using Shouldly;
 using Zenini.Model;
@@ -14,7 +15,11 @@ namespace Zenini.Tests.Model
             sectionOne = new Section("SectionOne");
             sectionTwo = new Section("SectionTwo");
 
-            settings = new IniSettings(new[] {sectionOne, sectionTwo});
+            var dictionary = new Dictionary<string, ISection>();
+            dictionary.Add(sectionOne.Name, sectionOne);
+            dictionary.Add(sectionTwo.Name, sectionTwo);
+
+            settings = new IniSettings(dictionary);
         }
 
         private ISection sectionOne;

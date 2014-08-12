@@ -1,27 +1,20 @@
-﻿using System;
-using System.Collections;
+﻿using System.Collections;
 using System.Collections.Generic;
-using System.Linq;
 
 namespace Zenini.Model
 {
     public class IniSettings : IIniSettings
     {
-        private readonly List<ISection> _sections;
+        private readonly IDictionary<string, ISection> _sections;
 
-        public IniSettings(IEnumerable<ISection> sections)
+        public IniSettings(IDictionary<string, ISection> sections)
         {
-            _sections = new List<ISection>(sections);
-        }
-
-        public ISection[] Sections
-        {
-            get { return _sections.ToArray(); }
+            _sections = sections;
         }
 
         public IEnumerator<ISection> GetEnumerator()
         {
-            return _sections.GetEnumerator();
+            return _sections.Values.GetEnumerator();
         }
 
         IEnumerator IEnumerable.GetEnumerator()
@@ -31,7 +24,7 @@ namespace Zenini.Model
 
         public ISection this[string name]
         {
-            get { return _sections.FirstOrDefault(s => string.Equals(s.Name, name, StringComparison.OrdinalIgnoreCase)) ?? Section.Empty; }
+            get { return _sections.ContainsKey(name) ? _sections[name] : Section.Empty; }
         }
     }
 }

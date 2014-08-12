@@ -4,7 +4,7 @@ namespace Zenini.Model
 {
     public class Section : ISection
     {
-        public static readonly ISection Empty = new EmptySection();
+        public static readonly ISection Empty = new NullSection();
 
         protected Section()
         {
@@ -17,7 +17,7 @@ namespace Zenini.Model
             Name = name;
         }
 
-        public virtual string Name { get; private set; }
+        public string Name { get; private set; }
 
         public override string ToString()
         {
@@ -25,11 +25,16 @@ namespace Zenini.Model
         }
     }
 
-    internal class EmptySection : Section
+    internal class NullSection : ISection
     {
-        public override string Name
+        public string Name
         {
             get { return "#Empty#"; }
+        }
+
+        public override string ToString()
+        {
+            return string.Format("{0}: {1}", GetType().Name, Name);
         }
     }
 }
