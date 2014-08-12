@@ -9,6 +9,7 @@
 #---------------------------------#
 
 # version format
+semver: 0.0.0
 version: 0.0.{build}
 
 # branches to build
@@ -96,7 +97,7 @@ assembly_info:
   file: AssemblyInfo.*
   assembly_version: "{version}"
   assembly_file_version: "{version}"
-  assembly_informational_version: "{version}"
+  assembly_informational_version: "{semver}.PRE"
 
 #---------------------------------#
 #       build configuration       #
