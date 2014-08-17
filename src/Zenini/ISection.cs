@@ -1,4 +1,4 @@
-﻿namespace Zenini.Model
+﻿namespace Zenini
 {
     public interface ISection
     {

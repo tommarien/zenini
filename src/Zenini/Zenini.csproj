@@ -8,7 +8,7 @@
     <OutputType>Library</OutputType>
     <AppDesignerFolder>Properties</AppDesignerFolder>
     <RootNamespace>Zenini</RootNamespace>
-    <AssemblyName>Zenini.Core</AssemblyName>
+    <AssemblyName>Zenini</AssemblyName>
     <TargetFrameworkVersion>v4.5</TargetFrameworkVersion>
     <FileAlignment>512</FileAlignment>
   </PropertyGroup>
@@ -43,9 +43,9 @@
   <ItemGroup>
     <Compile Include="ISettingsReader.cs" />
     <Compile Include="IniSettingsProvider.cs" />
-    <Compile Include="Model\IIniSettings.cs" />
+    <Compile Include="IIniSettings.cs" />
     <Compile Include="Model\IniSettings.cs" />
-    <Compile Include="Model\ISection.cs" />
+    <Compile Include="ISection.cs" />
     <Compile Include="Model\Section.cs" />
     <Compile Include="Patterns\SectionPattern.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />

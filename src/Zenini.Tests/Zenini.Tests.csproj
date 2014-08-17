@@ -74,12 +74,11 @@
     </Content>
   </ItemGroup>
   <ItemGroup>
-    <ProjectReference Include="..\Zenini.Core\Zenini.Core.csproj">
+    <ProjectReference Include="..\Zenini\Zenini.csproj">
       <Project>{dcb2757f-2e76-4a84-bb53-6cc3804dc1f9}</Project>
-      <Name>Zenini.Core</Name>
+      <Name>Zenini</Name>
     </ProjectReference>
   </ItemGroup>
-  <ItemGroup />
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <Import Project="$(SolutionDir)\.nuget\NuGet.targets" Condition="Exists('$(SolutionDir)\.nuget\NuGet.targets')" />
   <Target Name="EnsureNuGetPackageBuildImports" BeforeTargets="PrepareForBuild">

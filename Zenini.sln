@@ -1,11 +1,9 @@
 ﻿
 Microsoft Visual Studio Solution File, Format Version 12.00
-# Visual Studio 2013
-VisualStudioVersion = 12.0.30501.0
-MinimumVisualStudioVersion = 10.0.40219.1
+# Visual Studio 2012
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Zenini.Tests", "src\Zenini.Tests\Zenini.Tests.csproj", "{A28F60B4-03EA-42D6-9226-941FBC33345F}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Zenini.Core", "src\Zenini.Core\Zenini.Core.csproj", "{DCB2757F-2E76-4A84-BB53-6CC3804DC1F9}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Zenini", "src\Zenini\Zenini.csproj", "{DCB2757F-2E76-4A84-BB53-6CC3804DC1F9}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution

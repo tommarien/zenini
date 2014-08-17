@@ -1,6 +1,6 @@
 ﻿using System.Collections.Generic;
 
-namespace Zenini.Model
+namespace Zenini
 {
     public interface IIniSettings : IEnumerable<ISection>
     {
