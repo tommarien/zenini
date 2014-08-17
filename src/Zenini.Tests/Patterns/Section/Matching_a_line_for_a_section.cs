@@ -1,7 +1,7 @@
 ﻿using System.Collections.Generic;
 using NUnit.Framework;
 using Shouldly;
-using Zenini.Core.Patterns;
+using Zenini.Patterns;
 
 namespace Zenini.Tests.Patterns.Section
 {

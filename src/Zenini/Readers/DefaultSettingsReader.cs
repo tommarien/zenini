@@ -2,8 +2,8 @@
 using System.Collections.Generic;
 using System.IO;
 using System.Linq;
-using Zenini.Core.Patterns;
 using Zenini.Model;
+using Zenini.Patterns;
 
 namespace Zenini.Readers
 {
@@ -18,8 +18,14 @@ namespace Zenini.Readers
         }
 
         public DefaultSettingsReader(StringComparer stringComparer)
+            : this(stringComparer, new SectionPattern())
+        {
+        }
+
+        public DefaultSettingsReader(StringComparer stringComparer, SectionPattern sectionPattern)
         {
             _stringComparer = stringComparer;
+            _sectionPattern = sectionPattern;
         }
 
         public IIniSettings Read(TextReader reader)
