@@ -5,13 +5,13 @@ using Shouldly;
 namespace Zenini.Tests.Reading.Sections
 {
     [TestFixture]
-    public class When_reading_sections_that_appear_multiple_times : SettingsReaderFixture
+    public class When_reading_sections_that_appear_multiple_times_different_casing : SettingsReaderFixture
     {
         protected override void AfterSetup()
         {
             Source.AppendLine("[SectionOne]");
             Source.AppendLine("[SectionTwo]");
-            Source.AppendLine("[SectionOne]");
+            Source.AppendLine("[Sectionone]");
         }
 
         [Test]

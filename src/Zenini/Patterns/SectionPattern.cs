@@ -6,16 +6,16 @@ namespace Zenini.Patterns
     {
         private static readonly Regex SectionRegex = new Regex(@"\A\[(.*)\]\s*\z", RegexOptions.Compiled);
 
-        public virtual bool Matches(string value)
+        public virtual bool Matches(string line)
         {
-            return SectionRegex.IsMatch(value);
+            return SectionRegex.IsMatch(line);
         }
 
-        public virtual string Extract(string value)
+        public virtual string Extract(string line)
         {
             string sectionName = null;
 
-            MatchCollection collection = SectionRegex.Matches(value);
+            MatchCollection collection = SectionRegex.Matches(line);
 
             if (collection.Count == 1)
             {
