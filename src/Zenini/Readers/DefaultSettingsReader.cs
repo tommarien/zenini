@@ -9,7 +9,9 @@ namespace Zenini.Readers
 {
     public class DefaultSettingsReader : ISettingsReader
     {
+        private readonly KeyValuePattern _keyValuePattern = new KeyValuePattern();
         private readonly SectionPattern _sectionPattern = new SectionPattern();
+
         private readonly StringComparer _stringComparer;
 
         public DefaultSettingsReader()
@@ -18,14 +20,15 @@ namespace Zenini.Readers
         }
 
         public DefaultSettingsReader(StringComparer stringComparer)
-            : this(stringComparer, new SectionPattern())
+            : this(stringComparer, new SectionPattern(), new KeyValuePattern())
         {
         }
 
-        public DefaultSettingsReader(StringComparer stringComparer, SectionPattern sectionPattern)
+        public DefaultSettingsReader(StringComparer stringComparer, SectionPattern sectionPattern, KeyValuePattern keyValuePattern)
         {
             _stringComparer = stringComparer;
             _sectionPattern = sectionPattern;
+            _keyValuePattern = keyValuePattern;
         }
 
         public IIniSettings Read(TextReader reader)
@@ -33,14 +36,23 @@ namespace Zenini.Readers
             var sections = new Dictionary<string, Section>(_stringComparer);
 
             string line;
+            var section = new Section(string.Empty, new Dictionary<string, string>(_stringComparer));
+
             while ((line = reader.ReadLine()) != null)
             {
                 if (_sectionPattern.Matches(line))
                 {
-                    var section = new Section(_sectionPattern.Extract(line));
+                    string sectionName = _sectionPattern.Extract(line);
 
-                    if (!sections.ContainsKey(section.Name))
-                        sections.Add(section.Name, section);
+                    if (!sections.ContainsKey(sectionName))
+                        sections.Add(sectionName, new Section(sectionName, new Dictionary<string, string>(_stringComparer)));
+
+                    section = sections[sectionName];
+                }
+                else if (_keyValuePattern.Matches(line))
+                {
+                    Tuple<string, string> keyValue = _keyValuePattern.Extract(line);
+                    section.Set(keyValue.Item1, keyValue.Item2);
                 }
             }
 

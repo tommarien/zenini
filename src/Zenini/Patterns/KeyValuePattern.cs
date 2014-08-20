@@ -7,7 +7,7 @@ namespace Zenini.Patterns
     {
         private static readonly Regex KeyValueRegex = new Regex(@"^\s*(.+?)\s*=\s*(.+?)\s*$", RegexOptions.Compiled);
 
-        public virtual bool IsMatch(string line)
+        public virtual bool Matches(string line)
         {
             return KeyValueRegex.IsMatch(line);
         }

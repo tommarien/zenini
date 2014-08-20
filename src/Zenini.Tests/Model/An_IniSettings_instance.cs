@@ -12,8 +12,8 @@ namespace Zenini.Tests.Model
         [SetUp]
         public void Setup()
         {
-            sectionOne = new Section("SectionOne");
-            sectionTwo = new Section("SectionTwo");
+            sectionOne = new Section("SectionOne", new Dictionary<string, string>());
+            sectionTwo = new Section("SectionTwo", new Dictionary<string, string>());
 
             var dictionary = new Dictionary<string, ISection>();
             dictionary.Add(sectionOne.Name, sectionOne);

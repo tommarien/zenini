@@ -1,4 +1,5 @@
-﻿using NUnit.Framework;
+﻿using System.Collections.Generic;
+using NUnit.Framework;
 using Shouldly;
 using Zenini.Model;
 
@@ -10,7 +11,7 @@ namespace Zenini.Tests.Model.Sections
         [SetUp]
         public void Setup()
         {
-            Section = new Section("A given section");
+            Section = new Section("A given section", new Dictionary<string, string>());
         }
 
         public Section Section { get; set; }

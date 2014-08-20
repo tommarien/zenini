@@ -63,6 +63,7 @@
     <Compile Include="Reading\SettingsReaderFixture.cs" />
     <Compile Include="Reading\Sections\When_reading_sections.cs" />
     <Compile Include="Reading\Sections\When_reading_sections_that_appear_multiple_times.cs" />
+    <Compile Include="Reading\Settings\When_reading_settings.cs" />
     <Compile Include="TestFiles\TestFile.cs" />
   </ItemGroup>
   <ItemGroup>
