@@ -12,11 +12,51 @@ namespace Zenini.Tests.Reading.Settings
         }
 
         [Test]
-        public void it_returns_the_value()
+        public void it_reads_the_setting()
         {
             IIniSettings settings = ReadFromSource();
 
-            settings["Section"].Get("Enable").ShouldBe("true");
+            settings["Section"].GetSetting("Enable").ShouldBe("true");
+        }
+
+        [Test]
+        public void it_ignores_leading_whitespaces_on_key()
+        {
+            Source.AppendLine("  Test=value");
+
+            IIniSettings settings = ReadFromSource();
+
+            settings["Section"].GetSetting("Test").ShouldBe("value");
+        }
+
+        [Test]
+        public void it_ignores_trailing_whitespaces_on_key()
+        {
+            Source.AppendLine("Test   =value");
+
+            IIniSettings settings = ReadFromSource();
+
+            settings["Section"].GetSetting("Test").ShouldBe("value");
+        }
+
+        [Test]
+        public void it_ignores_leading_whitespace_on_value()
+        {
+            Source.AppendLine("Test=  value");
+
+            IIniSettings settings = ReadFromSource();
+
+            settings["Section"].GetSetting("Test").ShouldBe("value");
+        }
+
+        [Test]
+        public void it_ignores_trailing_whitespace_on_value()
+        {
+            Source.AppendLine("Test=value  ");
+
+            IIniSettings settings = ReadFromSource();
+
+            settings["Section"].GetSetting("Test").ShouldBe("value");
         }
     }
 }
