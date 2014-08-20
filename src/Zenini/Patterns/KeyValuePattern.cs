@@ -19,6 +19,9 @@ namespace Zenini.Patterns
             string key = collection[0].Groups[1].Value;
             string value = collection[0].Groups[2].Value;
 
+            if (value.StartsWith("\"") && value.EndsWith("\""))
+                value = value.Substring(1, value.Length - 2);
+
             return new Tuple<string, string>(key, value);
         }
     }
