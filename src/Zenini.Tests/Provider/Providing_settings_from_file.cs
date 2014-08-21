@@ -1,5 +1,5 @@
-﻿using System.Text;
-using NSubstitute;
+﻿using System.Collections.Generic;
+using System.Text;
 using NUnit.Framework;
 using Shouldly;
 using Zenini.Model;
@@ -15,7 +15,7 @@ namespace Zenini.Tests.Provider
         {
             reader = new FakeSettingsReader
                 {
-                    SettingsToReturn = Substitute.For<IIniSettings>()
+                    SettingsToReturn = new IniSettings(new Dictionary<string, ISection>())
                 };
 
             Provider = new IniSettingsProvider(reader);
