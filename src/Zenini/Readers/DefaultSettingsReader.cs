@@ -2,6 +2,7 @@
 using System.Collections.Generic;
 using System.IO;
 using System.Linq;
+using System.Text.RegularExpressions;
 using Zenini.Model;
 using Zenini.Patterns;
 
@@ -9,6 +10,7 @@ namespace Zenini.Readers
 {
     public class DefaultSettingsReader : ISettingsReader
     {
+        private static readonly Regex Comment = new Regex(@"\A\;(.*)\s*\z", RegexOptions.Compiled);
         private readonly KeyValuePattern _keyValuePattern = new KeyValuePattern();
         private readonly SectionPattern _sectionPattern = new SectionPattern();
 
@@ -40,6 +42,8 @@ namespace Zenini.Readers
 
             while ((line = reader.ReadLine()) != null)
             {
+                if (Comment.IsMatch(line)) continue;
+
                 if (_sectionPattern.Matches(line))
                 {
                     string sectionName = _sectionPattern.Extract(line);
