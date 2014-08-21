@@ -28,19 +28,19 @@ namespace Zenini.Tests.Model
         private IIniSettings settings;
 
         [Test]
+        public void has_an_indexer_that_returns_a_section()
+        {
+            settings["SectionOne"].ShouldBeSameAs(sectionOne);
+        }
+
+        [Test]
         public void has_an_indexer_that_returns_an_empty_section_if_none_match()
         {
             settings["sectionthree"].ShouldBeSameAs(Section.Empty);
         }
 
         [Test]
-        public void has_an_indexer_to_return_a_section()
-        {
-            settings["SectionOne"].ShouldBeSameAs(sectionOne);
-        }
-
-        [Test]
-        public void is_a_container_of_settings()
+        public void is_a_container_of_sections()
         {
             settings.Count().ShouldBe(2);
         }
