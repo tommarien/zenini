@@ -51,6 +51,9 @@ namespace Zenini.Readers
                 }
                 else if (_keyValuePattern.Matches(line))
                 {
+                    if (section.Name == Section.DefaultSectionName && !sections.ContainsKey(section.Name))
+                        sections.Add(section.Name, section);
+
                     Tuple<string, string> keyValue = _keyValuePattern.Extract(line);
                     section.Set(keyValue.Item1, keyValue.Item2);
                 }

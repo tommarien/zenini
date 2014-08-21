@@ -3,6 +3,7 @@ using Shouldly;
 
 namespace Zenini.Tests.Reading.Settings
 {
+    [TestFixture]
     public class When_reading_settings_enclosed_in_quotation_marks : SettingsReaderFixture
     {
         protected override void AfterSetup()

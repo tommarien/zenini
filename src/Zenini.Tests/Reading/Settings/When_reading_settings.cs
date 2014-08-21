@@ -3,6 +3,7 @@ using Shouldly;
 
 namespace Zenini.Tests.Reading.Settings
 {
+    [TestFixture]
     public class When_reading_settings : SettingsReaderFixture
     {
         protected override void AfterSetup()

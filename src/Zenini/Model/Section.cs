@@ -6,6 +6,8 @@ namespace Zenini.Model
 {
     public class Section : ISection
     {
+        public const string DefaultSectionName = "";
+
         public static readonly ISection Empty = new NullSection();
         private readonly IDictionary<string, string> _values;
 
@@ -26,11 +28,6 @@ namespace Zenini.Model
             return value;
         }
 
-        public void Set(string key, string value)
-        {
-            _values[key] = value;
-        }
-
         public IEnumerator<KeyValuePair<string, string>> GetEnumerator()
         {
             return _values.GetEnumerator();
@@ -39,6 +36,11 @@ namespace Zenini.Model
         IEnumerator IEnumerable.GetEnumerator()
         {
             return GetEnumerator();
+        }
+
+        public void Set(string key, string value)
+        {
+            _values[key] = value;
         }
 
         public override string ToString()
