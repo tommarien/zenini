@@ -65,6 +65,8 @@
     <Compile Include="Reading\Sections\When_reading_sections_that_appear_multiple_times.cs" />
     <Compile Include="Reading\Settings\When_reading_settings.cs" />
     <Compile Include="Reading\Settings\When_reading_settings_enclosed_in_quotation_marks.cs" />
+    <Compile Include="Reading\Settings\When_reading_settings_of_reoccurring_section.cs" />
+    <Compile Include="Reading\Settings\When_reading_settings_that_occur_more_then_once.cs" />
     <Compile Include="Reading\Settings\When_reading_settings_without_section.cs" />
     <Compile Include="TestFiles\TestFile.cs" />
   </ItemGroup>
