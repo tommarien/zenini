@@ -56,15 +56,16 @@
     <Compile Include="Provider\FakeSettingsReader.cs" />
     <Compile Include="Provider\Providing_settings_from_file.cs" />
     <Compile Include="Provider\Providing_settings_from_file_specifying_encoding.cs" />
-    <Compile Include="Reading\Sections\When_reading_sections_that_appear_multiple_times_different_casing.cs" />
+    <Compile Include="Reading\When_reading_sections_that_appear_multiple_times_different_casing.cs" />
     <Compile Include="Reading\SettingsReaderFixture.cs" />
-    <Compile Include="Reading\Sections\When_reading_sections.cs" />
-    <Compile Include="Reading\Sections\When_reading_sections_that_appear_multiple_times.cs" />
-    <Compile Include="Reading\Settings\When_reading_settings.cs" />
-    <Compile Include="Reading\Settings\When_reading_settings_enclosed_in_quotation_marks.cs" />
-    <Compile Include="Reading\Settings\When_reading_settings_of_reoccurring_section.cs" />
-    <Compile Include="Reading\Settings\When_reading_settings_that_occur_more_then_once.cs" />
-    <Compile Include="Reading\Settings\When_reading_settings_without_section.cs" />
+    <Compile Include="Reading\When_reading_sections.cs" />
+    <Compile Include="Reading\When_reading_sections_that_appear_multiple_times.cs" />
+    <Compile Include="Reading\When_reading_settings.cs" />
+    <Compile Include="Reading\When_reading_settings_enclosed_in_quotation_marks.cs" />
+    <Compile Include="Reading\When_reading_settings_of_reoccurring_section.cs" />
+    <Compile Include="Reading\When_reading_settings_that_occur_more_then_once.cs" />
+    <Compile Include="Reading\When_reading_settings_that_occur_more_then_once_with_different_casing.cs" />
+    <Compile Include="Reading\When_reading_settings_without_section.cs" />
     <Compile Include="TestFiles\TestFile.cs" />
   </ItemGroup>
   <ItemGroup>

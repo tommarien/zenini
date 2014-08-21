@@ -2,7 +2,7 @@
 using NUnit.Framework;
 using Shouldly;
 
-namespace Zenini.Tests.Reading.Sections
+namespace Zenini.Tests.Reading
 {
     [TestFixture]
     public class When_reading_sections_that_appear_multiple_times : SettingsReaderFixture

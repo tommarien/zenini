@@ -2,7 +2,7 @@
 using NUnit.Framework;
 using Shouldly;
 
-namespace Zenini.Tests.Reading.Settings
+namespace Zenini.Tests.Reading
 {
     [TestFixture]
     public class When_reading_settings_of_reoccurring_section : SettingsReaderFixture

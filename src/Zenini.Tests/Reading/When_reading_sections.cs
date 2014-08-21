@@ -1,8 +1,7 @@
 ﻿using NUnit.Framework;
 using Shouldly;
-using Zenini.Model;
 
-namespace Zenini.Tests.Reading.Sections
+namespace Zenini.Tests.Reading
 {
     [TestFixture]
     public class When_reading_sections : SettingsReaderFixture

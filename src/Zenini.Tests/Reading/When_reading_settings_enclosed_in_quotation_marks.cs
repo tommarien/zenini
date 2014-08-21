@@ -1,7 +1,7 @@
 ﻿using NUnit.Framework;
 using Shouldly;
 
-namespace Zenini.Tests.Reading.Settings
+namespace Zenini.Tests.Reading
 {
     [TestFixture]
     public class When_reading_settings_enclosed_in_quotation_marks : SettingsReaderFixture
