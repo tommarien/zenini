@@ -18,7 +18,7 @@ namespace Zenini.Tests.Reading.Settings
 
             IIniSettings settings = ReadFromSource();
 
-            settings["Section"].GetSetting("key").ShouldBe("value");
+            settings["Section"].Get("key").ShouldBe("value");
         }
 
         [Test]
@@ -28,7 +28,7 @@ namespace Zenini.Tests.Reading.Settings
 
             IIniSettings settings = ReadFromSource();
 
-            settings["Section"].GetSetting("key").ShouldBe(" value");
+            settings["Section"].Get("key").ShouldBe(" value");
         }
 
         [Test]
@@ -38,7 +38,7 @@ namespace Zenini.Tests.Reading.Settings
 
             IIniSettings settings = ReadFromSource();
 
-            settings["Section"].GetSetting("key").ShouldBe("value ");
+            settings["Section"].Get("key").ShouldBe("value ");
         }
 
         [Test]
@@ -48,7 +48,7 @@ namespace Zenini.Tests.Reading.Settings
 
             IIniSettings settings = ReadFromSource();
 
-            settings["Section"].GetSetting("key").ShouldBe("value=");
+            settings["Section"].Get("key").ShouldBe("value=");
         }
     }
 }

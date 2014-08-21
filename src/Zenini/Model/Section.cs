@@ -21,7 +21,7 @@ namespace Zenini.Model
 
         public string Name { get; private set; }
 
-        public string GetSetting(string key)
+        public string Get(string key)
         {
             string value;
             _values.TryGetValue(key, out value);
@@ -56,7 +56,7 @@ namespace Zenini.Model
             get { return "#Empty#"; }
         }
 
-        public string GetSetting(string key)
+        public string Get(string key)
         {
             return null;
         }

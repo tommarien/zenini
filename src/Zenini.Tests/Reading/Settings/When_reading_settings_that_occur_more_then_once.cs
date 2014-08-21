@@ -17,7 +17,7 @@ namespace Zenini.Tests.Reading.Settings
         public void the_last_value_wins()
         {
             IIniSettings settings = ReadFromSource();
-            settings["Section"].GetSetting("key1").ShouldBe("value2");
+            settings["Section"].Get("key1").ShouldBe("value2");
         }
     }
 }
