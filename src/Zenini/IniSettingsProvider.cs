@@ -1,6 +1,5 @@
 ﻿using System.IO;
 using System.Text;
-using Zenini.Model;
 using Zenini.Readers;
 
 namespace Zenini
