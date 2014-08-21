@@ -1,5 +1,6 @@
 ﻿using NUnit.Framework;
 using Shouldly;
+using Zenini.Model;
 
 namespace Zenini.Tests.Reading
 {
@@ -44,6 +45,16 @@ namespace Zenini.Tests.Reading
             IIniSettings settings = ReadFromSource();
 
             settings.ShouldContain(section => section.Name == "[Special]Section");
+        }
+
+        [Test]
+        public void it_ignores_casing_on_indexer()
+        {
+            Source.AppendLine("[SectionOne]");
+
+            IIniSettings settings = ReadFromSource();
+
+            settings["sectionone"].ShouldNotBeSameAs(Section.Empty);
         }
 
         [Test]

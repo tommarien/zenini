@@ -63,7 +63,7 @@ namespace Zenini.Readers
                 }
             }
 
-            return new IniSettings(sections.ToDictionary(pair => pair.Key, pair => (ISection) pair.Value));
+            return new IniSettings(sections.ToDictionary(pair => pair.Key, pair => (ISection) pair.Value, _stringComparer));
         }
     }
 }
