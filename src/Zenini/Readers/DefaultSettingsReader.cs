@@ -38,7 +38,7 @@ namespace Zenini.Readers
             var sections = new Dictionary<string, Section>(_stringComparer);
 
             string line;
-            var section = new Section(string.Empty, new Dictionary<string, string>(_stringComparer));
+            var section = new Section(new Dictionary<string, string>(_stringComparer));
 
             while ((line = reader.ReadLine()) != null)
             {

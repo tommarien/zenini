@@ -1,5 +1,4 @@
-﻿using System;
-using System.Collections;
+﻿using System.Collections;
 using System.Collections.Generic;
 
 namespace Zenini.Model
@@ -11,11 +10,14 @@ namespace Zenini.Model
         public static readonly ISection Empty = new NullSection();
         private readonly IDictionary<string, string> _values;
 
+        public Section(IDictionary<string, string> values)
+            : this(null, values)
+        {
+        }
+
         public Section(string name, IDictionary<string, string> values)
         {
-            if (name == null) throw new ArgumentNullException("name");
-
-            Name = name;
+            Name = name ?? DefaultSectionName;
             _values = values;
         }
 
