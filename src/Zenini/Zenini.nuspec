@@ -4,7 +4,7 @@
         <id>zenini</id>
         <version>$version$</version>
         <title>Zenini</title>
-        <authors>Tom Marien (@tommarien)</authors>
+        <authors>Tom Marien (@Tom_Marien)</authors>
         <projectUrl>https://github.com/tommarien/zenini</projectUrl>
         <requireLicenseAcceptance>false</requireLicenseAcceptance>
         <description>An easy ini file reading library</description>
