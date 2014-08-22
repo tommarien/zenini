@@ -16,21 +16,11 @@ namespace Zenini.Readers
 
         private readonly StringComparer _stringComparer;
 
-        public DefaultSettingsReader()
-            : this(StringComparer.OrdinalIgnoreCase)
-        {
-        }
-
         public DefaultSettingsReader(StringComparer stringComparer)
-            : this(stringComparer, new SectionPattern(), new KeyValuePattern())
         {
-        }
+            if (stringComparer == null) throw new ArgumentNullException("stringComparer");
 
-        public DefaultSettingsReader(StringComparer stringComparer, SectionPattern sectionPattern, KeyValuePattern keyValuePattern)
-        {
             _stringComparer = stringComparer;
-            _sectionPattern = sectionPattern;
-            _keyValuePattern = keyValuePattern;
         }
 
         public IIniSettings Read(TextReader reader)
@@ -38,7 +28,7 @@ namespace Zenini.Readers
             var sections = new Dictionary<string, Section>(_stringComparer);
 
             string line;
-            var section = new Section(new Dictionary<string, string>(_stringComparer));
+            var section = new Section(null, new Dictionary<string, string>(_stringComparer));
 
             while ((line = reader.ReadLine()) != null)
             {

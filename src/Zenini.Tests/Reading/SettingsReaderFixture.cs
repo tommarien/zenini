@@ -1,7 +1,7 @@
-﻿using System.IO;
+﻿using System;
+using System.IO;
 using System.Text;
 using NUnit.Framework;
-using Zenini.Model;
 using Zenini.Readers;
 
 namespace Zenini.Tests.Reading
@@ -14,7 +14,7 @@ namespace Zenini.Tests.Reading
         [SetUp]
         public void Setup()
         {
-            Reader = new DefaultSettingsReader();
+            Reader = new DefaultSettingsReader(StringComparer.OrdinalIgnoreCase);
             Source = new StringBuilder();
 
             AfterSetup();

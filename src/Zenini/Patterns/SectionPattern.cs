@@ -13,14 +13,9 @@ namespace Zenini.Patterns
 
         public virtual string Extract(string line)
         {
-            string sectionName = null;
-
             MatchCollection collection = SectionRegex.Matches(line);
 
-            if (collection.Count == 1)
-            {
-                sectionName = collection[0].Groups[1].Value.Trim();
-            }
+            string sectionName = collection[0].Groups[1].Value.Trim();
 
             return sectionName;
         }

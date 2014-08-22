@@ -1,17 +1,11 @@
 ﻿using System.IO;
 using System.Text;
-using Zenini.Readers;
 
 namespace Zenini
 {
     public class IniSettingsProvider
     {
         private readonly ISettingsReader _settingsReader;
-
-        public IniSettingsProvider()
-            : this(new DefaultSettingsReader())
-        {
-        }
 
         public IniSettingsProvider(ISettingsReader settingsReader)
         {
