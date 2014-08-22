@@ -71,5 +71,15 @@ namespace Zenini.Tests.Reading
 
             settings["Section"].Get("test").ShouldBe("value");
         }
+
+        [Test]
+        public void it_reads_the_setting_disregarding_case()
+        {
+            Source.AppendLine("test=value");
+
+            IIniSettings settings = ReadFromSource();
+
+            settings["Section"].Get("Test").ShouldBe("value");
+        }
     }
 }
