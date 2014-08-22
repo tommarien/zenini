@@ -1,13 +1,14 @@
 ﻿<?xml version="1.0" encoding="utf-8"?>
 <package xmlns="http://schemas.microsoft.com/packaging/2010/07/nuspec.xsd">
     <metadata>
-        <id>$id$</id>
+        <id>zenini</id>
         <version>$version$</version>
-        <title>Zen INI</title>
-        <authors>Tom Marien</authors>
+        <title>Zenini</title>
+        <authors>Tom Marien (@tommarien)</authors>
         <projectUrl>https://github.com/tommarien/zenini</projectUrl>
         <requireLicenseAcceptance>false</requireLicenseAcceptance>
-        <description>A relaxed INI parsing library</description>
+        <description>An easy ini file reading library</description>
+	<tags>ini configuration parsing setting</tags>
     </metadata>
 	<files>
 	  <file src="bin\$configuration$\$id$.dll" target="lib\net40\" />	
