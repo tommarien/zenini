@@ -9,7 +9,7 @@ This build is hosted on [Appveyor](http://www.appveyor.com/)
 
 ### Installing trough Nuget
 ```
-Install-Package Zenini
+Install-Package zenini
 ```
 
 ### Getting started
