@@ -1,6 +1,16 @@
-Zenini (pronounced as zen ini)
-======
+# Zenini
 
-The goal is to create a simple, ini utility library (native c#)
+Zenini is a small, lightweight and unobtrusive ini file parser.
+
+### Build Status
+This build is hosted on [Appveyor](http://www.appveyor.com/)
 
 [![Build status](https://ci.appveyor.com/api/projects/status/dtbbt92nldoh2upd)](https://ci.appveyor.com/project/tommarien/zenini)
+
+### Installing trough Nuget
+```
+Install-Package Zenini
+```
+
+### Getting started
+Read more on our [Wiki](https://github.com/tommarien/zenini/wiki)
