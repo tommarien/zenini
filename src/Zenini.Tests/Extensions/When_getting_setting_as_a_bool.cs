@@ -7,7 +7,7 @@ using Zenini.Model;
 namespace Zenini.Tests.Extensions
 {
     [TestFixture]
-    public class When_getting_settings_as_a_bool
+    public class When_getting_setting_as_a_bool
     {
         [SetUp]
         public void Setup()
@@ -20,6 +20,12 @@ namespace Zenini.Tests.Extensions
         private Dictionary<string, string> _values;
 
         public ISection Section { get; set; }
+
+        [Test]
+        public void it_return_null_if_does_not_exist()
+        {
+            Section.GetValueAsBool("enable").ShouldBe(null);
+        }
 
         [Test]
         public void it_returns_false_if_value_is_0()

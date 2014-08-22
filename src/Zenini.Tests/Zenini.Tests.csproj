@@ -48,7 +48,8 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="Extensions\When_getting_settings_as_a_bool.cs" />
+    <Compile Include="Extensions\When_getting_setting_as_an_int.cs" />
+    <Compile Include="Extensions\When_getting_setting_as_a_bool.cs" />
     <Compile Include="Model\An_IniSettings_instance.cs" />
     <Compile Include="Model\A_section.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />

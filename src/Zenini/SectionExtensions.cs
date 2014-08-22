@@ -18,5 +18,14 @@ namespace Zenini
 
             throw new FormatException("String was not recognized as a valid Boolean.");
         }
+
+        public static int? GetValueAsInt(this ISection section, string key)
+        {
+            string property = section.GetValue(key);
+
+            if (property == null) return null;
+
+            return int.Parse(property);
+        }
     }
 }
