@@ -3,7 +3,7 @@ using NUnit.Framework;
 using Shouldly;
 using Zenini.Model;
 
-namespace Zenini.Tests.Model.Sections
+namespace Zenini.Tests.Model
 {
     [TestFixture]
     public class A_section

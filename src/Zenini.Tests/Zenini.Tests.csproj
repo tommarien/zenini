@@ -49,7 +49,7 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="Model\An_IniSettings_instance.cs" />
-    <Compile Include="Model\Sections\A_section.cs" />
+    <Compile Include="Model\A_section.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="Provider\FakeSettingsReader.cs" />
     <Compile Include="Provider\Providing_settings_from_file.cs" />
