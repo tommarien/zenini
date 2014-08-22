@@ -17,7 +17,7 @@ namespace Zenini.Tests.Reading
         public void casing_is_ignored_and_the_last_value_wins()
         {
             IIniSettings settings = ReadFromSource();
-            settings["Section"].Get("key1").ShouldBe("value2");
+            settings["Section"].GetValue("key1").ShouldBe("value2");
         }
     }
 }

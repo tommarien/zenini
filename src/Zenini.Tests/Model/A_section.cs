@@ -22,7 +22,7 @@ namespace Zenini.Tests.Model
         [Test]
         public void has_a_get_method_that_retrieves_a_setting()
         {
-            Section.Get("name").ShouldBe("value");
+            Section.GetValue("name").ShouldBe("value");
         }
 
         [Test]

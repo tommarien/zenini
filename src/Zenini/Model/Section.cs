@@ -23,7 +23,7 @@ namespace Zenini.Model
 
         public string Name { get; private set; }
 
-        public string Get(string key)
+        public string GetValue(string key)
         {
             string value;
             _values.TryGetValue(key, out value);
@@ -58,7 +58,7 @@ namespace Zenini.Model
             get { return "#Empty#"; }
         }
 
-        public string Get(string key)
+        public string GetValue(string key)
         {
             return null;
         }

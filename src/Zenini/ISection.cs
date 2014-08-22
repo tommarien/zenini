@@ -5,6 +5,6 @@ namespace Zenini
     public interface ISection : IEnumerable<KeyValuePair<string, string>>
     {
         string Name { get; }
-        string Get(string key);
+        string GetValue(string key);
     }
 }

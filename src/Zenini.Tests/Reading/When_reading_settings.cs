@@ -29,7 +29,7 @@ namespace Zenini.Tests.Reading
 
             IIniSettings settings = ReadFromSource();
 
-            settings["Section"].Get("test").ShouldBe("value");
+            settings["Section"].GetValue("test").ShouldBe("value");
         }
 
         [Test]
@@ -39,7 +39,7 @@ namespace Zenini.Tests.Reading
 
             IIniSettings settings = ReadFromSource();
 
-            settings["Section"].Get("test").ShouldBe("value");
+            settings["Section"].GetValue("test").ShouldBe("value");
         }
 
         [Test]
@@ -49,7 +49,7 @@ namespace Zenini.Tests.Reading
 
             IIniSettings settings = ReadFromSource();
 
-            settings["Section"].Get("test").ShouldBe("value");
+            settings["Section"].GetValue("test").ShouldBe("value");
         }
 
         [Test]
@@ -59,7 +59,7 @@ namespace Zenini.Tests.Reading
 
             IIniSettings settings = ReadFromSource();
 
-            settings["Section"].Get("test").ShouldBe("value");
+            settings["Section"].GetValue("test").ShouldBe("value");
         }
 
         [Test]
@@ -69,7 +69,7 @@ namespace Zenini.Tests.Reading
 
             IIniSettings settings = ReadFromSource();
 
-            settings["Section"].Get("test").ShouldBe("value");
+            settings["Section"].GetValue("test").ShouldBe("value");
         }
 
         [Test]
@@ -79,7 +79,7 @@ namespace Zenini.Tests.Reading
 
             IIniSettings settings = ReadFromSource();
 
-            settings["Section"].Get("Test").ShouldBe("value");
+            settings["Section"].GetValue("Test").ShouldBe("value");
         }
     }
 }
