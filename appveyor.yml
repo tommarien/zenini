@@ -22,6 +22,10 @@ version: 1.0.1.{build}
 #   except:
 #     - gh-pages
 
+# Do not build on tags (GitHub only)
+skip_tags: true
+
+
 #---------------------------------#
 #    environment configuration    #
 #---------------------------------#
