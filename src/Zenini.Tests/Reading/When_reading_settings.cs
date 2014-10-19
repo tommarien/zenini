@@ -53,6 +53,16 @@ namespace Zenini.Tests.Reading
         }
 
         [Test]
+        public void it_ignores_trailing_whitespace_on_value_with_comments()
+        {
+            Source.AppendLine("test=value  ;comment");
+
+            IIniSettings settings = ReadFromSource();
+
+            settings["Section"].GetValue("test").ShouldBe("value");
+        }
+
+        [Test]
         public void it_ignores_trailing_whitespaces_on_key()
         {
             Source.AppendLine("test   =value");
@@ -63,9 +73,29 @@ namespace Zenini.Tests.Reading
         }
 
         [Test]
+        public void it_ignores_trailing_whitespaces_on_key_with_comments()
+        {
+            Source.AppendLine("test   =value;comment");
+
+            IIniSettings settings = ReadFromSource();
+
+            settings["Section"].GetValue("test").ShouldBe("value");
+        }
+
+        [Test]
         public void it_reads_the_setting()
         {
             Source.AppendLine("test=value");
+
+            IIniSettings settings = ReadFromSource();
+
+            settings["Section"].GetValue("test").ShouldBe("value");
+        }
+
+        [Test]
+        public void it_reads_the_setting_ignore_comments()
+        {
+            Source.AppendLine("test=value;comment");
 
             IIniSettings settings = ReadFromSource();
 
