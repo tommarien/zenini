@@ -68,6 +68,26 @@ namespace Zenini.Tests.Reading
         }
 
         [Test]
+        public void it_ignores_comments_on_sections()
+        {
+            Source.AppendLine("[SectionOne];Comment");
+
+            IIniSettings settings = ReadFromSource();
+
+            settings.ShouldContain(section => section.Name == "SectionOne");
+        }
+
+        [Test]
+        public void it_ignores_comments_on_sections_even_if_they_contain_a_square_bracket()
+        {
+            Source.AppendLine("[SectionOne];]Comment");
+
+            IIniSettings settings = ReadFromSource();
+
+            settings.ShouldContain(section => section.Name == "SectionOne");
+        }
+
+        [Test]
         public void it_ignores_trailing_spaces_after_bracket()
         {
             Source.AppendLine("[SectionThree]      ");
